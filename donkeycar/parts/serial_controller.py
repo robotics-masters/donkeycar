@@ -16,7 +16,9 @@ class SerialController:
         self.throttle = 0.0
         self.mode = 'user'
         self.recording = False
-        self.serial = serial.Serial('/dev/ttyS0', 115200, timeout=1) #Serial port - laptop: 'COM3', Arduino: '/dev/ttyACM0'
+        # Raspberry Pi: /dev/ttyS0
+        # Jetson Nano: /dev/ttyTHS1
+        self.serial = serial.Serial('/dev/ttyTHS1', 115200, timeout=1)
 
 
     def update(self):
