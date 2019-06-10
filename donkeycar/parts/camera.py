@@ -37,6 +37,9 @@ class CSICamera(BaseCamera):
         ret, frame = self.camera.read()
         return frame
     
+    def update(self):
+        pass
+
     def shutdown(self):
         # indicate that the thread should be stopped
         print('stoping CSICamera')
